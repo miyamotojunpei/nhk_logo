@@ -1,4 +1,5 @@
 import cv2
+from egg import Egg
 import numpy as np
 
 
@@ -6,17 +7,30 @@ def main():
     # 画像の読み込み
     images = read_images()
 
+    # ゲームスタート
+    start_game(images)
 
     return
 
 
 def read_images():
-    background_image = cv2.imread("../image/nhk_logo_background.png", cv2.IMREAD_COLOR)
-    n_image = cv2.imread("../image/nhk_logo_n.png", cv2.IMREAD_UNCHANGED)
-    h_image = cv2.imread("../image/nhk_logo_h.png", cv2.IMREAD_UNCHANGED)
-    k_image = cv2.imread("../image/nhk_logo_k.png", cv2.IMREAD_UNCHANGED)
-    return background_image, n_image, h_image, k_image
+    bg_image = cv2.imread("../image/nhk_logo_background.png", cv2.IMREAD_COLOR)
+    n_image = Egg("nhk_logo_n.png")
+    h_image = Egg("nhk_logo_h.png")
+    k_image = Egg("nhk_logo_k.png")
 
+    return bg_image, n_image, h_image, k_image
+
+
+def start_game(images):
+    stop_count = 0
+    while stop_count < 3:
+        rotate(images)
+
+    print_score()
+
+def rotate(images):
+    while
 
 
 
