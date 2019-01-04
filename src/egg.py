@@ -16,7 +16,7 @@ class Egg:
         center = tuple([self.size // 2, self.size // 2])
 
         # 回転させたい角度（正の値は反時計回り）
-        angle = time.time() * 500
+        angle = time.time() * 360
 
         # 拡大比率
         scale = 1.0
@@ -25,6 +25,7 @@ class Egg:
         rotation_matrix = cv2.getRotationMatrix2D(center, angle, scale)
 
         # アフィン変換
-        img_rot = cv2.warpAffine(copied_object.image, rotation_matrix, (self.size, self.size), flags=cv2.INTER_CUBIC, borderMode=cv2.BORDER_TRANSPARENT)
+        img_rot = cv2.warpAffine(copied_object.image, rotation_matrix, (self.size, self.size), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_TRANSPARENT)
+        img_rot[0:10, :, :] = 0
         copied_object.image = img_rot
         return copied_object

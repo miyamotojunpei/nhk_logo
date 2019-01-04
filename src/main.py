@@ -49,11 +49,7 @@ def rotate(images):
     current_image = overlay(current_image, h_rotated)
     current_image = overlay(current_image, k_rotated)
 
-    white = np.ones(current_image.shape, dtype=np.uint8) * 255
-    for y in range(current_image.shape[0]):
-        for x in range(current_image.shape[1]):
-            if (current_image[y][x] == (0, 0, 0, 0)).all():
-                current_image[y][x] = (255, 255, 255, 255)
+    current_image[np.where((current_image == [0, 0, 0, 0]).all(axis=2))] = [255, 255, 255, 255]
     return current_image
 
 
