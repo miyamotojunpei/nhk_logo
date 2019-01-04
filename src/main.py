@@ -17,13 +17,10 @@ def main():
 
 
 def read_images():
-    bg_image = cv2.imread("../image/nhk_logo_background.png", cv2.IMREAD_COLOR)
-    b_channel, g_channel, r_channel = cv2.split(bg_image)
-    a_channel = np.zeros(b_channel.shape, dtype=np.uint8)
-    bg_image = cv2.merge((b_channel, g_channel, r_channel, a_channel))
-    n_image = Egg("nhk_logo_n_rgb.png", 372, 242, 0)
-    h_image = Egg("nhk_logo_h_rgb.png", 372, 242, 290)
-    k_image = Egg("nhk_logo_k_rgb.png", 372, 242, 579)
+    bg_image = cv2.imread("../image/nhk_logo_background_rgba.png", cv2.IMREAD_UNCHANGED)
+    n_image = Egg("nhk_logo_n.png", 372, 242, 0)
+    h_image = Egg("nhk_logo_h.png", 372, 242, 290)
+    k_image = Egg("nhk_logo_k.png", 372, 242, 579)
 
     return bg_image, n_image, h_image, k_image
 
@@ -47,13 +44,15 @@ def rotate(images):
     h_rotated = images[2].rotate()
     k_rotated = images[3].rotate()
 
-    current_image = overlay(bg_image, n_rotated)
+    current_image = overlay(bg_image.copy(), n_rotated)
     current_image = overlay(current_image, h_rotated)
-    current_image = overlay(current_image, k_rotated)
-    return current_image
+    final_image = overlay(current_image, k_rotated)
+    return final_image
 
 
 def overlay(bg_image, rotated):
+    part_bg = bg_image[rotated.y_offset:rotated.y_offset + rotated.size, rotated.x_offset:rotated.x_offset + rotated.size]
+    part_image = cv2.addWeighted(part_bg, 1, rotated.image, 0.5, 0)
     bg_image[rotated.y_offset:rotated.y_offset + rotated.size, rotated.x_offset:rotated.x_offset + rotated.size] = rotated.image
     return bg_image
 
