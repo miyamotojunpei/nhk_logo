@@ -30,27 +30,31 @@ def start_game(images):
     stop_count = 0
     win_name = "NHK"
     cv2.namedWindow(win_name, cv2.WINDOW_AUTOSIZE)
-    cv2.setMouseCallback(win_name, mouseevent.mouse_event)
+    mouse = mouseevent.MouseParam(win_name)
 
     while stop_count < 3:
-        current_image = rotate(images)
+        if mouse.get_event() == cv2.EVENT_LBUTTONUP:
+            mouse_pos = mouse.get_pos()
+        else:
+            mouse_pos = (0, 0)
+        current_image = rotate(images, mouse_pos)
         cv2.imshow(win_name, current_image)
         cv2.waitKey(1)
     return
 
 
-def rotate(images):
+def rotate(images, mouse_pos):
     bg_image = images[0]
-    n_rotated = images[1].rotate()
-    h_rotated = images[2].rotate()
-    k_rotated = images[3].rotate()
+    n_rotated = images[1].stop(mouse_pos).rotate()
+    h_rotated = images[2].stop(mouse_pos).rotate()
+    k_rotated = images[3].stop(mouse_pos).rotate()
 
     current_image = overlay(bg_image.copy(), n_rotated)
     current_image = overlay(current_image, h_rotated)
     current_image = overlay(current_image, k_rotated)
 
     current_image[np.where((current_image == [0, 0, 0, 0]).all(axis=2))] = [255, 255, 255, 255]
-    return current_image
+    return current_image, sum(x.stopped for x in images)
 
 
 def overlay(bg_image, rotated):
