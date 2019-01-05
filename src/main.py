@@ -10,20 +10,17 @@ def main():
 
     # ゲームスタート
     start_game(images)
-
-    #スコア表示
-    print_score()
     return
 
 
 def read_images():
-    bg_image = cv2.imread("../image/nhk_logo_background_rgba.png", cv2.IMREAD_UNCHANGED)
-    bg_image = np.zeros(bg_image.shape, dtype=np.uint8)
+    #bg_image = cv2.imread("../image/nhk_logo_background_rgba.png", cv2.IMREAD_UNCHANGED)
+    #bg_image = np.zeros(bg_image.shape, dtype=np.uint8)
     n_image = Egg("nhk_logo_n.png", 372, 242, 0)
     h_image = Egg("nhk_logo_h.png", 372, 242, 290)
     k_image = Egg("nhk_logo_k.png", 372, 242, 579)
 
-    return bg_image, n_image, h_image, k_image
+    return n_image, h_image, k_image
 
 
 def start_game(images):
@@ -37,19 +34,23 @@ def start_game(images):
             mouse_pos = mouse.get_pos()
         else:
             mouse_pos = (0, 0)
-        current_image = rotate(images, mouse_pos)
+        current_image, stop_count = rotate(images, mouse_pos)
         cv2.imshow(win_name, current_image)
         cv2.waitKey(1)
+
+    final_image = print_score(current_image, images)
+    cv2.imshow(win_name, final_image)
+    cv2.waitKey(0)
     return
 
 
 def rotate(images, mouse_pos):
-    bg_image = images[0]
-    n_rotated = images[1].stop(mouse_pos).rotate()
-    h_rotated = images[2].stop(mouse_pos).rotate()
-    k_rotated = images[3].stop(mouse_pos).rotate()
+    bg_image = np.zeros((960, 960, 4), dtype=np.uint8)
+    n_rotated = images[0].stop(mouse_pos).rotate()
+    h_rotated = images[1].stop(mouse_pos).rotate()
+    k_rotated = images[2].stop(mouse_pos).rotate()
 
-    current_image = overlay(bg_image.copy(), n_rotated)
+    current_image = overlay(bg_image, n_rotated)
     current_image = overlay(current_image, h_rotated)
     current_image = overlay(current_image, k_rotated)
 
@@ -61,6 +62,11 @@ def overlay(bg_image, rotated):
     bg_image[rotated.y_offset:rotated.y_offset + rotated.size, rotated.x_offset:rotated.x_offset + rotated.size] += rotated.image
     return bg_image
 
+
+def print_score(current_image, images):
+    score = sum(abs(x.error-180) for x in images) * 100 // 540
+    cv2.putText(current_image, "Rating:" + str(score) + "%", (50, 200), cv2.FONT_HERSHEY_COMPLEX, 4, (0, 0, 0), 5, cv2.LINE_AA)
+    return current_image
 
 if __name__ == "__main__":
     main()

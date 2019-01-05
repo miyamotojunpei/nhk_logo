@@ -23,7 +23,7 @@ class Egg:
         if self.stopped:
             angle = self.error
         else:
-            angle = time.time() * 360
+            angle = time.time() * 360 % 360
 
         # 拡大比率
         scale = 1.0
@@ -42,5 +42,6 @@ class Egg:
                 and (self.x_offset+self.size//4, self.y_offset+self.size//4,)\
                 < mouse_pos < (self.x_offset+self.size*3//4, self.x_offset+self.size*3//4,):
             self.stopped = True
-            self.error = time.time() * 360
+            self.error = time.time() * 360 % 360
+            print(self.error)
         return self
