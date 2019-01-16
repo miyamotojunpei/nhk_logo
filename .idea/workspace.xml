@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="509f6d18-f116-49d7-9547-9194ac2f4cda" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/egg.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/egg.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mouseevent.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/mouseevent.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,7 +14,7 @@
     <session id="765292043">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.opened" value="2" />
@@ -38,14 +35,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="5" />
-          <entry key="py" value="3518" />
-          <entry key="txt" value="122" />
+          <entry key="py" value="3913" />
+          <entry key="txt" value="157" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="127" />
-          <entry key="Python" value="3518" />
+          <entry key="PLAIN_TEXT" value="162" />
+          <entry key="Python" value="3913" />
         </counts>
       </usages-collector>
     </session>
@@ -55,12 +52,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="56" column="59" selection-start-line="56" selection-start-column="59" selection-end-line="56" selection-end-column="59" />
+            <state relative-caret-position="462">
+              <caret line="67" column="63" selection-start-line="67" selection-start-column="63" selection-end-line="67" selection-end-column="63" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
-                <marker date="1546654147101" expanded="true" signature="728:1023" ph="..." />
-                <marker date="1546654147101" expanded="true" signature="1587:1740" ph="..." />
+                <marker date="1546657475531" expanded="true" signature="690:1108" ph="..." />
+                <marker date="1546657475531" expanded="true" signature="2075:2102" ph="..." />
               </folding>
             </state>
           </provider>
@@ -69,7 +66,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../VisualGuidance/src/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1700">
+            <state relative-caret-position="-1598">
               <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
             </state>
           </provider>
@@ -78,11 +75,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/egg.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="713">
-              <caret line="42" column="16" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
+            <state relative-caret-position="305">
+              <caret line="45" column="28" selection-start-line="45" selection-start-column="28" selection-end-line="45" selection-end-column="28" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
-                <marker date="1546653680409" expanded="true" signature="47:52" ph="..." />
+                <marker date="1546655482376" expanded="true" signature="47:52" ph="..." />
               </folding>
             </state>
           </provider>
@@ -146,6 +143,9 @@
       </pane>
       <pane id="Scope" />
     </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -255,19 +255,32 @@
       <option name="project" value="LOCAL" />
       <updated>1546621100997</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="enable stop">
+      <created>1546654332960</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1546654332960</updated>
+    </task>
+    <task id="LOCAL-00009" summary="first goal complete">
+      <created>1546657692732</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1546657692732</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1293" height="813" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4978166" visible="true" weight="0.24980111" />
-      <window_info id="Structure" order="1" sideWeight="0.5021834" side_tool="true" visible="true" weight="0.24980111" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49926794" visible="true" weight="0.24980111" />
+      <window_info id="Structure" order="1" sideWeight="0.50073206" side_tool="true" visible="true" weight="0.24980111" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329429" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.329429" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.329429" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -292,7 +305,9 @@
     <MESSAGE value="bg_image becomes transparent" />
     <MESSAGE value="success to rotate" />
     <MESSAGE value="noise delete" />
-    <option name="LAST_COMMIT_MESSAGE" value="noise delete" />
+    <MESSAGE value="enable stop" />
+    <MESSAGE value="first goal complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="first goal complete" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/image/nhk_logo_h.png">
@@ -318,32 +333,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../VisualGuidance/src/test.py">
+    <entry file="file://$PROJECT_DIR$/src/egg.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1700">
-          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+        <state relative-caret-position="305">
+          <caret line="45" column="28" selection-start-line="45" selection-start-column="28" selection-end-line="45" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+            <marker date="1546655482376" expanded="true" signature="47:52" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/egg.py">
+    <entry file="file://$PROJECT_DIR$/../VisualGuidance/src/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="713">
-          <caret line="42" column="16" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-            <marker date="1546653680409" expanded="true" signature="47:52" ph="..." />
-          </folding>
+        <state relative-caret-position="-1598">
+          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="56" column="59" selection-start-line="56" selection-start-column="59" selection-end-line="56" selection-end-column="59" />
+        <state relative-caret-position="462">
+          <caret line="67" column="63" selection-start-line="67" selection-start-column="63" selection-end-line="67" selection-end-column="63" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
-            <marker date="1546654147101" expanded="true" signature="728:1023" ph="..." />
-            <marker date="1546654147101" expanded="true" signature="1587:1740" ph="..." />
+            <marker date="1546657475531" expanded="true" signature="690:1108" ph="..." />
+            <marker date="1546657475531" expanded="true" signature="2075:2102" ph="..." />
           </folding>
         </state>
       </provider>

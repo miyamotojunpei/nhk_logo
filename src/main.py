@@ -14,8 +14,6 @@ def main():
 
 
 def read_images():
-    #bg_image = cv2.imread("../image/nhk_logo_background_rgba.png", cv2.IMREAD_UNCHANGED)
-    #bg_image = np.zeros(bg_image.shape, dtype=np.uint8)
     n_image = Egg("nhk_logo_n.png", 372, 242, 0)
     h_image = Egg("nhk_logo_h.png", 372, 242, 290)
     k_image = Egg("nhk_logo_k.png", 372, 242, 579)
@@ -67,6 +65,7 @@ def print_score(current_image, images):
     score = sum(abs(x.error-180) for x in images) * 100 // 540
     cv2.putText(current_image, "Rating:" + str(score) + "%", (50, 200), cv2.FONT_HERSHEY_COMPLEX, 4, (0, 0, 0), 5, cv2.LINE_AA)
     return current_image
+
 
 if __name__ == "__main__":
     main()
