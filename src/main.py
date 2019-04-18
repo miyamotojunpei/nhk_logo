@@ -5,11 +5,15 @@ import numpy as np
 
 
 def main():
-    # 画像の読み込み
-    images = read_images()
+    while True:
+        # 画像の読み込み
+        images = read_images()
 
-    # ゲームスタート
-    start_game(images)
+        # ゲームスタート
+        key = start_game(images)
+        # rキーを押すとループ
+        if key != ord('r'):
+            break
     return
 
 
@@ -38,8 +42,8 @@ def start_game(images):
 
     final_image = print_score(current_image, images)
     cv2.imshow(win_name, final_image)
-    cv2.waitKey(0)
-    return
+    key = cv2.waitKey(0)
+    return key
 
 
 def rotate(images, mouse_pos):
@@ -63,7 +67,7 @@ def overlay(bg_image, rotated):
 
 def print_score(current_image, images):
     score = sum(abs(x.error-180) for x in images) * 100 // 540
-    cv2.putText(current_image, "Rating:" + str(score) + "%", (50, 200), cv2.FONT_HERSHEY_COMPLEX, 4, (0, 0, 0), 5, cv2.LINE_AA)
+    cv2.putText(current_image, "Shichoritsu:" + str(score) + "%", (50, 200), cv2.FONT_HERSHEY_COMPLEX, 2, (0, 0, 0), 5, cv2.LINE_AA)
     return current_image
 
 
